@@ -1,0 +1,8 @@
+$yellow: #fce473;
+
+
+
+
+/*--------------------------------------*/
+
+header { border-bottom:5px solid &yellow; }

@@ -1,0 +1,3880 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto&subset=cyrillic';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=cyrillic';
+@import url('fontello/css/fontello.css');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html, body {height:100% !important;}
+body {
+	width:100%; 
+	margin:0;
+	background: #FFF !important;
+	color:#444 !important;
+
+}
+main,header,article,section,footer,nav,figure,figcaption,address {display:block;overflow:hidden;}
+  
+/* adaptive 
+
+   100% / количество столбцов * номер столбца
+   100% / 12 * 12 = 8.33333333% * 12 = 100%
+   100% / 12 * 7 = 8.33333333% * 7 = 58.33333333%
+   100% / 12 * 2 = 8.33333333% * 2 = 16.66666667%
+---------------------------------------*/
+
+/* Container */
+
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1920px;
+}
+
+/*
+
+    .col - Column-столбец.
+    es - Extra Small - Минимальная ширина столбца при ширине окна браузера от 240px.
+    sm - Small - Минимальная ширина столбца при ширине окна браузера от 480px.
+    md - Medium - Минимальная ширина столбца при ширине окна браузера от 768px.
+    la - Large - Минимальная ширина столбца при ширине окна браузера от 1280px.
+    el - Extra Large - Минимальная ширина столбца при ширине окна браузера от 1600px.
+
+    (width and height): iPad(768*1024), iPhone(320*480), Androids(480*800) 
+----------------------------------------- */
+/* For mobile phones: */
+@media all and (min-width:240px) {
+	.col-es_1  { width: 8.33333333%; }
+	.col-es_2  { width: 16.66666667%; }
+	.col-es_3  { width: 25%; }
+	.col-es_4  { width: 33.33333333%; }
+	.col-es_5  { width: 41.66666667%; }
+	.col-es_6  { width: 50%; }
+	.col-es_7  { width: 58.33333333%; }
+	.col-es_8  { width: 66.66666667%; }
+	.col-es_9  { width: 75%; }
+	.col-es_10 { width: 83.33333333%; }
+	.col-es_11 { width: 91.66666667%; }
+	.col-es_12 { width: 100%; }
+	
+}
+/* For tablets: */
+@media all and (min-width:480px) {
+	.col-sm_1  { width: 8.33333333%; }
+	.col-sm_2  { width: 16.66666667%; }
+	.col-sm_3  { width: 25%; }
+	.col-sm_4  { width: 33.33333333%; }
+	.col-sm_5  { width: 41.66666667%; }
+	.col-sm_6  { width: 50%; }
+	.col-sm_7  { width: 58.33333333%; }
+	.col-sm_8  { width: 66.66666667%; }
+	.col-sm_9  { width: 75%; }
+	.col-sm_10 { width: 83.33333333%; }
+	.col-sm_11 { width: 91.66666667%; }
+	.col-sm_12 { width: 100%; }
+}
+/* For desktop: */
+@media all and (min-width:768px) {
+	.col-md_1  { width: 8.33333333%; }
+	.col-md_2  { width: 16.66666667%; }
+	.col-md_3  { width: 25%; }
+	.col-md_4  { width: 33.33333333%; }
+	.col-md_5  { width: 41.66666667%; }
+	.col-md_6  { width: 50%; }
+	.col-md_7  { width: 58.33333333%; }
+	.col-md_8  { width: 66.66666667%; }
+	.col-md_9  { width: 75%; }
+	.col-md_10 { width: 83.33333333%; }
+	.col-md_11 { width: 91.66666667%; }
+	.col-md_12 { width: 100%; }
+}
+@media all and (min-width:1280px) {
+	.col-la_1  { width: 8.33333333%; }
+	.col-la_2  { width: 16.66666667%; }
+	.col-la_3  { width: 25%; }
+	.col-la_4  { width: 33.33333333%; }
+	.col-la_5  { width: 41.66666667%; }
+	.col-la_6  { width: 50%; }
+	.col-la_7  { width: 58.33333333%; }
+	.col-la_8  { width: 66.66666667%; }
+	.col-la_9  { width: 75%; }
+	.col-la_10 { width: 83.33333333%; }
+	.col-la_11 { width: 91.66666667%; }
+	.col-la_12 { width: 100%; }
+}
+@media all and (min-width:1600px) {
+	.col-el_1  { width: 8.33333333%; }
+	.col-el_2  { width: 16.66666667%; }
+	.col-el_3  { width: 25%; }
+	.col-el_4  { width: 33.33333333%; }
+	.col-el_5  { width: 41.66666667%; }
+	.col-el_6  { width: 50%; }
+	.col-el_7  { width: 58.33333333%; }
+	.col-el_8  { width: 66.66666667%; }
+	.col-el_9  { width: 75%; }
+	.col-el_10 { width: 83.33333333%; }
+	.col-el_11 { width: 91.66666667%; }
+	.col-el_12 { width: 100%; }
+}
+[class*="col-"] {position:relative; float:
+left;}
+
+.clearFix::before,
+.clearFix::after {
+    content: " ";
+    display: block;
+}
+.clearFix::after {
+    clear: both;
+}
+/*
+HTML Elements
+-----------*/
+h1,h2,h3,h4,h5,h6 {margin:20px 0; color:#444444;font-weight:normal;}
+a, img {
+	outline:none;
+}
+a {
+	color:#069BCD;
+	cursor: pointer;
+	text-decoration:underline;
+	transition: color 0.01s ease-in 0s, background 0.01s ease-in 0s; 
+}
+a::hover{color:#f88e38;}
+a::active, a:visited{color:#069BCD;}
+
+img {
+	border:0;
+	max-width:100%;
+}
+p {text-indent:20px;font: 0.9em/1.3 "Open Sans",sans-serif;}
+wbr {display: inline-block;}
+/*---------*/
+
+/* БЛОК HEADER */
+
+.header {
+	height:100px;
+	-webkit-box-shadow:inset 0 2px 2px 0 #E0E0E0;
+	-moz-box-shadow:inset 0 2px 2px 0 #E0E0E0;
+	box-shadow:inset 0 2px 2px 0 #E0E0E0;
+}
+.header .col-es_9 {
+			height:100px;
+			text-align:center;
+			}
+	.header__logo {
+			width:150px;
+		}
+		.menu-mobile-link {
+			position:relative;
+			display:block;
+			height:100px;
+			text-align: center;
+		}
+		.menu-mobile-link_button {
+				color:#DFDFDF;
+				font-size: 1.6em;
+			}
+			.menu-mobile-link:hover {
+        		background:#00A9E0;
+			}
+			.menu-mobile-link_button {
+				position: relative;
+    			top: 37%;
+			}
+			.menu-mobile-link_button:hover {
+        		color:#fff;
+      		}	
+.menu {
+    display: block;
+    margin:0 auto;
+    padding:0;
+    text-align:center;
+  }
+    .menu li {
+      display: inline-block;
+      margin:20.5px 1%;
+      list-style: none;
+      }
+        .menu li a {
+          display: inline-block;
+          padding:20px 3.64963503649635%; /* 5px / 137px = 0,0364963503649635 */
+          text-decoration: none;
+          text-transform:uppercase;
+          white-space:nowrap;
+          color: #444;
+          font: normal .9em 'Roboto', Verdana;
+          }
+             .menu li a:visited {
+                color: #444; 
+              }
+                .menu li a:hover, .menu li a:active {
+                  background: #00A9E0;
+                  color: #fff;
+                }
+/* БЛОК HEADER */
+
+/* БЛОК BANNER */
+.index-page-banner, .index-page-banner_our-products, .index-page-banner_our-company {
+	position:relative;
+	background-image: url('img/index-page-banner.jpg');
+	background-size: cover;
+	background-repeat:no-repeat;
+	padding-top:17.29166666666667%;  /* 320px(высота изображения) / 480(ширина до медиа-запроса) = 0,66666666666  */
+	background-position:50% 0;
+}
+	.slogan, .slogan_our-products, .wrap-welcome {
+		width:100%;
+		text-align:center;
+		text-transform: uppercase;
+		font-family:'Open Sans Condensed', sans-serif;
+		font-size: 1.5em;
+	}
+		.slogan, .slogan_our-products {
+			position:relative;/*absolute;*/
+			/*left:0;
+			top:0;*/
+		}
+		.wrap-slogan, .wrap-slogan_our-products {
+			color:#3ABBF2;
+			background:black;
+			-moz-opacity:0.5;
+			opacity:0.5;
+			visibility:hidden;
+		}
+				.text__slogan {
+					display:inline-block;
+				}
+				.phone__number {
+					white-space:nowrap;
+					color:#fff;
+				}
+		.wrap-welcome {
+			/*bottom:0;*/
+			position:relative;
+			display: none;
+			background: rgb(37,141,200);
+		}
+				.welcome__text {
+					position:relative;
+					top: -4px;
+					display: block;
+					background: -moz-linear-gradient(left,  rgba(0,169,224,0) 0%, rgba(0,169,224,0.42) 19%, rgba(0,169,224,1) 50%, rgba(0,169,224,0.42) 81%, rgba(0,169,224,0) 100%);
+					background: -webkit-linear-gradient(left,  rgba(0,169,224,0) 0%,rgba(0,169,224,0.42) 19%,rgba(0,169,224,1) 50%,rgba(0,169,224,0.42) 81%,rgba(0,169,224,0) 100%);
+					background: linear-gradient(to right,  rgba(0,169,224,0) 0%,rgba(0,169,224,0.42) 19%,rgba(0,169,224,1) 50%,rgba(0,169,224,0.42) 81%,rgba(0,169,224,0) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000a9e0', endColorstr='#0000a9e0',GradientType=1 );
+							
+					border-top: 4px solid #00a9e0;
+
+					font-family: "Open Sans Condensed",sans-serif;
+					color:#fff;
+					text-shadow:0px -1px 0px #585757;
+				}
+				.animated {display:inline-block;}
+/* БЛОК BANNER */
+
+/* БЛОК MAIN */
+.prolog {
+	margin:0;
+	padding:20px 3% 5px 3%;
+
+	-webkit-animation-duration: 3s;
+  	-o-animationanimation-delay: 2s;
+  	-moz-animationanimation-iteration-count: infinite;
+
+}
+.prolog__header  {
+	text-align: center;
+	font-family:'Open Sans',sans-serif;
+	text-transform: uppercase;
+	color: #004e98;
+}
+	/*почему мы, главный заголовок*/
+	.wrap-why-we, .article-header {
+			font-size: 1.5em;
+			text-align:center;
+			text-transform: uppercase;
+			background: rgb(37,141,200);
+			clear: both;
+			overflow: visible;
+		}
+			.why-we__header, .article-header-index-page__h1 {
+					position:relative;
+					top: -4px;
+					display: block;
+					background: -moz-linear-gradient(left,  rgba(0,169,224,0) 0%, rgba(0,169,224,0.42) 19%, rgba(0,169,224,1) 50%, rgba(0,169,224,0.42) 81%, rgba(0,169,224,0) 100%);
+					background: -webkit-linear-gradient(left,  rgba(0,169,224,0) 0%,rgba(0,169,224,0.42) 19%,rgba(0,169,224,1) 50%,rgba(0,169,224,0.42) 81%,rgba(0,169,224,0) 100%);
+					background: linear-gradient(to right,  rgba(0,169,224,0) 0%,rgba(0,169,224,0.42) 19%,rgba(0,169,224,1) 50%,rgba(0,169,224,0.42) 81%,rgba(0,169,224,0) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0000a9e0', endColorstr='#0000a9e0',GradientType=1 );		
+					border-top: 4px solid #00a9e0;
+					font-family: 'Open Sans Condensed',sans-serif;
+					color:#fff;
+					text-shadow:0px -1px 0px #585757;
+				}
+	/*почему мы, главный заголовок*/
+/*почему мы*/
+.wrap-why-we-box {
+  background: #258DC8;
+	}
+.wrap-why-we-box .kiptab {
+    margin:0;
+    padding: 0;
+    text-align: center; 
+	}
+.wrap-why-we-box .kiptab li {
+	margin:10px 1%;
+	display: inline-block;
+	position:relative;
+    height: 172px;
+    width: 172px; 
+    text-align: center;
+
+    overflow: hidden;
+
+    border: 1px solid #00A9E0;
+    font: 1.4em/0.9 "Open Sans Condensed",sans-serif;
+    color:#E5E5E5;
+    cursor: pointer;
+
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(0,169,224,0.4) 0%, rgba(0,169,224,0.4) 30%, rgba(0,169,224,0.4) 70%, rgba(0,169,224,0.4) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,169,224,0.4) 0%,rgba(0,169,224,0.4) 30%,rgba(0,169,224,0.4) 70%,rgba(0,169,224,0.4) 100%);
+	background: radial-gradient(ellipse at center,  rgba(0,169,224,0.4) 0%,rgba(0,169,224,0.4) 30%,rgba(0,169,224,0.4) 70%,rgba(0,169,224,0.4) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6600a9e0', endColorstr='#6600a9e0',GradientType=1 );
+
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    border-radius: 125px;
+
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.wrap-why-we-box .kiptab li:hover {
+    -webkit-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    border-radius: 125px;
+
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+
+.wrap-why-we-box .kiptab li.active {
+    color: #fff;
+    text-shadow:0px -1px 0px #585757;
+    border:1px solid #13C0F4;
+
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(0,154,232,0.3) 0%, rgba(0,154,232,0.3) 8%, rgba(0,154,232,0.3) 95%, rgba(0,154,232,0.3) 100%);
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,154,232,0.3) 0%,rgba(0,154,232,0.3) 8%,rgba(0,154,232,0.3) 95%,rgba(0,154,232,0.3) 100%);
+	background: radial-gradient(ellipse at center,  rgba(0,154,232,0.3) 0%,rgba(0,154,232,0.3) 8%,rgba(0,154,232,0.3) 95%,rgba(0,154,232,0.3) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d009ae8', endColorstr='#4d009ae8',GradientType=1 );
+}
+
+.kiptab li + span{
+	position: relative;
+	display: block;
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    color:#fff;   
+}
+.ca-icon{
+	position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 30px;
+
+    font-size: 45px;
+    /*color: #f6f6f6;*/
+
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.ca-icon, .ca-content, .ca-main, .ca-sub {
+	display:block;
+	text-align: center;
+}
+.ca-main, .ca-sub {
+	position: absolute;
+	}
+.ca-main{
+    top: 73px;
+    -moz-opacity:0.8;
+    opacity: 0.8;
+}
+.ca-sub{
+	color:#E0EAEF; 
+    top: 88px;
+    text-align:center;
+    -moz-opacity:0;
+    opacity: 0;
+
+    -webkit-transition: all 400ms linear;
+    -moz-transition: all 400ms linear;
+    -o-transition: all 400ms linear;
+    -ms-transition: all 400ms linear;
+    transition: all 400ms linear;
+}
+.left-icon {
+	left:5px;
+}
+.ca-sub-last {
+	padding-left:20px;
+}
+.kiptab li:hover{
+    background: #1A91D2;
+    border: 1px solid #13C0F4;
+
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+.kiptab li:hover .ca-icon{
+    color:#fff;
+    font-size: 60px;
+}
+.kiptab li:hover .ca-main{
+    display: none;
+}
+.kiptab li:hover .ca-sub{
+	-moz-opacity:0.8;
+    opacity: 0.8; 
+    color:#fff;
+}
+
+.wrap-why-we-box .kiptab_divs{
+	position: relative;
+	background: #fff;
+}
+.wrap-why-we-box .kiptab_divs .tab-main-content{
+    display: none;
+    min-height:250px;
+    overflow:hidden;
+    /*padding:2%;*/
+    margin: 0 auto;
+    max-width: 1366px;
+    padding: 20px 3%;
+	background: #fff;
+}
+.wrap-why-we-box .kiptab_divs .active{
+    display: block;
+}
+.tab-main-content_img {
+	float:right;
+	margin:0 0 10px 10px;
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius: 20px;
+	border:4px solid rgba(37, 141, 200, 0.2);
+}
+/*почему мы*/
+
+div.wrap-flag-counters, div.wrap-split-installation, div.wrap-profi-work, div.wrap-wide-choose {
+	display: inline-block;
+    float: right;
+    margin: 0 0 10px 10px;
+    max-width: 450px;
+}
+img.flag-counters, img.split-installation, img.profi-work, img.wide-choose {
+	width:100%;
+	height:auto;
+	border-radius: 5px;
+}
+
+
+/*кондиционеры бытовые*/
+.article-sub-header {margin: 0 auto;max-width:1366px;padding:0 3%;}
+.article-sub-header-index-page__h3 {
+	text-transform: uppercase;
+	font-family: 'Open Sans',sans-serif;
+	font-weight: normal;
+	color:#004e98;
+}
+/*left block (splits for home)*/
+.splits-menu {
+	margin:0 auto;
+    max-width: 1366px;
+    padding: 0 3%;
+	overflow:hidden; 
+}
+	.js-tabs {
+	    float:left;
+	    width:310px;
+	    margin: 0;
+	    padding: 0;    
+	}
+		.js-tabs li {
+			display:inline-block;
+			width:100%;
+
+			padding-left:20px;
+		    line-height:3;
+		    cursor: pointer;
+		    border-bottom: 1px solid #cdcfd3;
+			background:#E4E7EB;
+			font-size:1.0em;
+			font-family:'Roboto', Verdana;
+			font-weight:normal;
+			color:#444;
+
+			-webkit-box-shadow: inset -13px 0px 12px -10px rgba(50, 50, 50, 0.2);
+			-moz-box-shadow:    inset -13px 0px 12px -10px rgba(50, 50, 50, 0.2);
+			box-shadow:         inset -13px 0px 12px -10px rgba(50, 50, 50, 0.2);
+		}
+			.js-tabs li::before {
+				content: url(img/arrow-right-blue.png);
+				position:relative;
+				top:0px;
+				left:-5px;
+			}
+				.js-tabs li:hover::before {
+					content: url(img/arrow-right-white.png);
+				}
+					.js-tabs li:hover, .js-tabs li.activesplits {
+						background:#0099CC;
+						color:#fff;
+					}
+
+.js-tabs_divs .main-block {
+    display: none;
+}
+.js-tabs_divs div.activesplits{
+    display: block;
+}
+/*end left block*/
+
+/*right block*/
+/*spoiler*/
+
+.main-block {
+   position:relative;
+   max-width: 100%;
+   min-height:539px;
+   overflow:hidden;
+}
+.main-block-content {
+	position:relative;
+	z-index:1;
+	padding:2% 2% 0 2%; 
+	overflow:hidden;
+
+	background: #2C3033;
+	color:#E0E0E0;
+}
+		.main-block strong {
+			display:inline-block;
+			margin-bottom:10px;
+			font:bold .9em 'Open Sans', sans-serif;
+			color:#fff;
+		}
+		.main-block > p {
+			color:#fff;
+		}
+		.bkg-bottom {
+			position:absolute;
+			display:block;
+			bottom:0;
+			width:100%;
+			text-align:center;
+
+			background-color: rgba(0, 141, 222, 0.5);
+		}
+				.split_link {
+					display:inline-block;
+					padding:30px;
+
+					color:#fff;
+					text-decoration:none;
+					text-transform:uppercase;
+					font: bold 1.0em 'Open sans', sans-serif, Verdana;
+					background:rgba(0, 141, 222, 0.2);
+				}
+					.split_link:hover {
+						background:rgba(0, 141, 222, 0.7);
+						color:#fff;
+					}
+					.split_link .icon-login::before {
+						content:"\e802";
+						display: inline-block;
+    					font-family: "fontello";
+    					position:relative;
+    					top:0px;
+						left:-5px;
+						font-size:1.1em;
+					}
+
+.article-index-page_hr::before {
+	content:'';
+	display:block;
+	margin:40px 0;
+	padding:2px;
+	width:100%;
+	background-color:#00cdff;
+}
+.splits-menu-comm {margin: 0 auto;max-width: 1366px;padding:0 3%;}
+/*
+-------- menu commercion*/
+.menu-block {
+	position:relative;
+  	max-width:300px;
+  	height:270px;
+  	margin:0 auto 35px auto;
+  	background:rgba(0, 0, 0, 0.1);
+}
+	.menu-block_header {
+		position:absolute;
+	  	bottom:0;
+	  	margin:0;
+	  	width:100%;
+	  	
+	  	border-top:1px solid #1FEEFF;
+	  	font:bold 1em 'Open Sans', sans-serif; 
+	  	line-height:2.5;
+	  	text-align:center;
+	  	text-transform:uppercase;
+	  	background:rgba(0, 141, 222, 0.7);
+	  	color:#fff;
+	  	cursor: text;
+	}
+	.menu-block_bkg {
+  		height:230px;/*100%*/
+
+	}
+	
+	.menu-block > .n-bkg {background: url(img/nasten.png)}
+	.menu-block > .k-bkg {background: url(img/kasset.png)}
+	.menu-block > .kan-bkg {background: url(img/kanaln.png)}
+	.menu-block > .kol-bkg {background: url(img/kolon.png)}
+	.menu-block > .nap-bkg {background: url(img/napoln.png)}
+	.menu-block > .n-p-bkg {background: url(img/nap-pot.png)}
+	.menu-block > .p-bkg {background: url(img/podpot.png)}
+	.menu-block > .m-bkg {background: url(img/multi.png)}
+	.menu-block > .z-bkg {background: url(img/zonal.png)}
+	.menu-block > [class*="-bkg"] {
+		background-size: contain;
+		background-position:50% 50%;
+		background-repeat:no-repeat;
+	}
+			.menu-block_ul {
+				position:relative;
+				margin:0;
+			  	padding:0;
+			  	height:100%;
+			  	
+			  	list-style:none;
+			  	opacity:0;
+			  	background:rgba(0, 0, 0, 0.2);
+		  	}
+				  	.menu-block_ul li {
+						position:relative;
+						top:0;
+						background:rgba(0, 141, 222, 0.5);
+					}
+						.menu-block_ul li a {
+					   		display:block;
+					   		padding:5px 50px;
+
+						   text-transform:uppercase;
+						   text-decoration:none;
+						   font:normal 1em/1em 'Open Sans', sans-serif;
+						   color:#fff;
+						}
+						.menu-block_ul li a:hover {
+					  		opacity:1;
+					  		background-color:rgba(0, 141, 222, 0.9);
+						}
+	.menu-block:hover h3 {
+	  transition-property:background;
+	  transition-duration:0.9s;
+	  transition-delay: 0.1s;
+	  background:rgba(0, 141, 222, 0.9);
+	}
+	.menu-block:hover .menu-block_bkg > .menu-block_ul {
+	  cursor:default;
+	  opacity:0.9;
+	  transition-property:opacity;
+	  transition-duration:0.7s;
+	  transition-delay: 0.1s;
+	  overflow:auto;
+	}
+	.menu-block:hover .menu-block_bkg > .menu-block_ul li {
+	  top:45px;
+	  transition-property:top;
+	  transition-duration:0.9s;
+	  transition-timing-function:cubic-bezier(.1, -1.5, .1, 2.5);
+	}
+/*
+--------end menu commercion*/
+/*-----banner---------*/
+#discount {margin-bottom:35px;}
+
+.discount-link {
+	display:block;
+	height:235px;
+	border-top:32px solid #33B1E4;
+	background:#EFF8FF;
+	border-bottom:32px solid #33B1E4;
+}
+.discount_special-offer {
+	position:absolute;
+	left:150px;
+	top:0;
+	line-height:1.7;
+	z-index:1;
+
+	font-family:'Open Sans Condensed',sans-serif;
+	font-size:2.2em;
+	text-transform:uppercase;
+	background:#00B473;
+	color:#fff;
+}
+.discount_special-offer::before {
+	content:''; 
+    position: absolute;
+    left:-60px;
+	border: 30px solid transparent; 
+	border-top: 30px solid #00B473; 
+	border-right: 30px solid #00B473;	
+}
+.discount_special-offer::after {
+	content:''; 
+    position: absolute;
+	border: 30px solid transparent; 
+	border-left: 30px solid #00B473; 
+	border-top: 30px solid #00B473; 
+}
+.discount-link-blocks {height:100%;display:block;}
+.discount-link-blocks span {
+	height:100%;
+	display:block;
+	text-align:center;
+}
+.discount-link-blocks span b {
+	display:inline-block;
+	height:35px;
+	font-family:'Roboto', Verdana;
+	font-size:1.8em;
+	text-transform:uppercase;
+	color:#00B473;
+}
+.discount-link-blocks img, .discount-link-blocks span b {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.discount-link:hover {
+	border-top-color:#258DC8;
+	border-bottom-color:#258DC8;
+	background-color:#DFF1FF;
+
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+}
+.discount-link:hover .discount_special-offer  {
+	background:#007F50;
+
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+}
+.discount-link:hover .discount_special-offer::after {
+	content:'';
+	border-left-color:#007F50; 
+	border-top-color:#007F50;
+
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+} 
+.discount-link:hover .discount_special-offer::before {
+	content:''; 
+	border-top-color:#007F50; 
+	border-right-color:#007F50;
+
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+} 
+.discount-link:hover .indoor-block {
+	right: -35px;
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+  }
+  .discount-link:hover .outdoor-block {
+	left: -35px;
+	transition-property: all;
+  	transition-duration: 3s;
+  	transition-delay: 0s, 1s;
+  	transition-timing-function: cubic-bezier(0.1, 0.8, 0.5, 2), linear;
+  }
+/*#discount {text-align:center;}
+.banner-stock {padding:2% 0;}*/
+/*-----end banner----*/
+
+
+/*
+----------- block services*/
+.color-blue {background: #258DC8;}
+.multitab-widget, .multitab-widget-content {
+	margin: 0;
+	height: 360px;
+	overflow:auto;
+	background: #258DC8;
+	text-shadow: 0 -1px 0 #585757;
+	color:#DBEAF9;
+}
+.multitab-widget {padding:0;list-style:none;background:#00A9E0;}
+.multitab-widget li {display:table;width:100%;}
+.multitab-widget li a {
+	display:table-row;
+	text-decoration:none;
+	text-align:center;
+	line-height: .9;
+	height:120px;
+	color:#fff;
+}
+.multitab-widget li a span {
+	display:table-cell;
+	vertical-align:middle;
+	width:60%;
+	padding-left:1.5%;
+	text-align:left;
+	font: 1em 'Open Sans', sans-serif;
+	text-transform: uppercase;
+}
+.multitab-widget li a:hover {background:#258DC8;}
+.multitab-widget-content {padding:5%; font:.9em/1 'Open Sans', sans-serif;}
+.multitab-widget-content strong, .multitab-widget-content span {display: block;}
+.multitab-widget-content strong {padding-bottom:1%;font-weight:normal;color:#fff;}
+
+a[href^="#multicolumn"] [class*="icon-"] {
+	display:table-cell;
+	min-width:40px;
+	width:40%;
+	text-align:right;
+	padding-right:1.5%;
+	vertical-align: middle;
+	font-size:200%;/*40px;*/
+	empty-cells:show;
+}
+.table-services {margin:10px 0; border-collapse:collapse;color:#DBEAF9;}
+.table-services * {
+  padding:7px 5px;
+  font-weight:normal;
+  text-align:center;
+  vertical-align:middle;
+  }
+.table-services caption {padding:10px;border-bottom:none;background:#299EDF;}
+.table-services tr, .table-services td {border:1px dotted #00A9E0}
+
+/*
+------ end block services*/
+/*
+-------who we are--------*/
+.who-are-we {margin:15px 0;}
+ .who-are-we__header {
+ 	display:block;
+ 	text-align: center;
+	font-family:'Open Sans',sans-serif;
+	text-transform: uppercase;
+	font-weight:normal;
+	color: #004e98;
+ }
+ .who-are-we__block {margin:0; padding: 20px 3% 5px;}
+
+/*
+-------end who we are--------*/ 
+.block-center {
+	display: block;
+	max-width:1366px;
+	margin: 0 auto;
+	}
+
+/*----- accordion-block ------*/
+.section-products__cables {padding:0 3%;}
+.section-products__electric{padding:0 3%;}
+.section-products__cables h3,
+.section-products__electric h3 {
+	text-align:center;
+	text-transform: uppercase;
+	font-size: .9em;
+	color: #004e98;
+    font-family: "Open Sans",sans-serif;
+}
+.accordion-block input {
+  display: none;
+}
+.accordion-block label {
+  display: block;
+  cursor: pointer;
+  background: #fff;
+}
+.accordion-block .box-links__products {
+  visibility: hidden;
+  color: #fff;
+  height: 0;
+}
+.accordion-block input:checked + label + .box-links__products {
+  visibility: visible;
+  color: #000;
+  height: auto;
+  text-align: center;
+
+  transition-property: visibility, color;
+  transition-duration: 1.5s;
+  transition-timing-function: linear;
+  transition-delay: 0.1s;
+}
+.accordion-block .box-links__products a {
+  opacity:0;
+}
+.accordion-block input:checked + label + .box-links__products a {
+  opacity:1;
+  transition: opacity 1s linear 0.3s;
+}
+.accordion-block strong{
+  display: inline-block;
+  margin-bottom:1px;
+  width: 100%;
+  font-family:'Open Sans', sans-serif;
+  font-size: .9em;
+  padding: 8px 30px;
+  line-height: 0.9;
+  cursor: pointer;
+  background-color:#F5F5FE/*#CFEBFF*/;
+  color: #0099cc;
+  border-radius:3px;
+
+  transition: background-color 0.1s ease-out 0s;
+}
+.accordion-block strong:hover {
+	background-color:rgba(175, 223, 255, 0.9);
+	color:#14606F;
+}
+.accordion-block input:checked ~ label strong {
+	background-color:#eee;
+	color:#444;
+}
+
+.box-links__products {
+	margin-bottom:1px;
+    height: 0;
+    overflow: hidden;
+}
+.box-links__products a {
+	display:inline-block;
+	border: 1px solid #e4e7eb;
+    font: 0.9em "Open Sans",sans-serif;
+    margin: 5px;
+    width: 220px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.accordion-block input:checked + label + .box-links__products a:hover {
+			border: 1px solid #f88e38;
+			color:#f88e38;
+			transition: border 0.5s ease-out 0s;
+		}
+
+.box-links__products figure {
+	margin:1px;
+}
+.box-links__products figcaption {
+	white-space:nowrap;
+}
+
+/*----- end-accordion-block ------*/
+
+#discount {
+	display:table;
+    background-color: #cfebff;
+    color: #fff;
+    font: 1.25em/0.9 "Open Sans Condensed",sans-serif;
+    height: 60px;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+}
+#discount span {
+	display: table-cell;
+    vertical-align:middle;
+    color: #00a7cf;
+}
+nav {
+	/*margin: 0 auto 30px auto;*/
+	margin: 0 auto;
+    max-width: 1366px;
+}
+.nav-on-pages {
+	margin:0;
+}
+.img-product, .img-articles {
+	margin: 0 auto;
+	}
+.img-product, .img-articles {
+	display: block;
+	padding: 1% 2%;
+	height: auto;
+	max-width: 60%;
+    min-width: 240px;
+}
+.img-articles {display: inline-block;float:left;}
+.wrap-features {
+	margin-top: 20px;
+}
+.features {
+	display: block;
+	text-align: center;
+	padding: 7px 0;
+	background: #cfebff;
+    color: #00a7cf;
+    border-radius: 3px 3px 0 0;
+    font: bold 0.9em "Open Sans",sans-serif;
+}
+.list-features {
+    list-style: outside none none;
+    margin:0;
+    padding:20px 30px;
+    font: 0.9em "Open Sans",sans-serif;
+    text-align: left;
+    background: #eff8ff;
+    border-radius: 0 0 3px 3px;
+}
+	.list-features li::before {
+	    content: url("img/arrow-right-li.png");
+	    left: -5px;
+	    position: relative;
+	    top: 0;
+	}
+.item_construction, .item_specifications li, .item_articles li {font: 0.9em "Open Sans",sans-serif;}
+.header_specifications, .header_mass-specifications {
+    clear: both;
+    font: bold 0.9em/1.3 "Open Sans",sans-serif;
+    margin-bottom: 10px;
+    padding: 0 0 5px;
+    text-indent: 1.5em;
+}
+.item_construction {padding-left:20px;}
+.item_specifications, .item_articles {
+	list-style: outside none none;
+    margin: 0 0 15px;
+    padding: 0;
+}
+.item_specifications li {border-bottom: 1px dotted #ddd;}
+
+/*dop products*/
+
+.dop-products {
+	clear: both;
+    margin: 0 2% 40px 2%;
+    overflow: auto;
+}
+	.trigger {
+		position:relative;
+		display:block;
+		margin:2px 0;
+    	padding:5px 5px 5px 7px;
+    	border-radius: 3px;
+    	font: 0.9em/1.8 "Open Sans",sans-serif;
+    	text-decoration:none;
+    	background-color:#cfebff;
+	}
+		.trigger:hover {color:#f88e38;}
+
+  .dop-products .trigger::before {
+    content: url("img/arrow-right-li.png");
+    position: relative;
+    top: 0;
+    display:inline-block;
+    margin-right: 5px;
+}
+
+/*dop products*/
+
+/* end БЛОК MAIN */
+
+
+/* БЛОК FOOTER */
+/*
+---------contact-----------*/
+.contact {padding: 20px 3% 5px;background:#EFF8FF;}
+
+.accordion-block__contact input {display: none;}
+.accordion-block__contact label {
+  display: block;
+  cursor: pointer;
+}
+.accordion-block__contact input ~ .address{
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+}
+.accordion-block__contact input[type='radio']:checked ~ .address{
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+
+  transition-property: visibility, color, opacity, height;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+.accordion-block__contact strong{
+  display: inline-block;
+  margin:0 0 5px 0;
+  width: 100%;
+  background-color:#CFEBFF;
+  font-family:'Open Sans', sans-serif;
+  font-size: .9em;
+  padding: 8px 30px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.accordion-block__contact input:checked + label strong:hover {
+	background-color:rgba(175, 223, 255, 0.9);
+	color:#14606F;
+}
+.contact-shop, .contact-form{
+		margin:15px 0;
+		padding:0 2%;
+}
+				.hdm {
+						height:auto;
+						width:100%;
+						padding:3px;
+
+						background:#CFEBFF;
+						}
+						.contact-shop strong{
+									text-align:left;
+									font:normal 1em 'Open Sans', sans-serif;
+									transition:.1s ease-out;
+									color:#00A7CF;
+									}
+									.contact p {
+											text-indent:0;
+											text-align:justify;
+											}
+											.contact p > span {
+											margin:7px 0;
+											display:block;
+
+											font:normal 1.5em 'Open Sans', sans-serif;
+											text-align:center;
+											}
+.contact-form {
+		color:#00A7CF;
+}
+#feedback-form::before {
+	content:'Оставить заявку';
+	background: #cfebff none repeat scroll 0 0;
+    border-bottom: 5px solid #eff8ff;
+    color: #00a7cf;
+    display: block;
+    font: 1em 'Open Sans',sans-serif;
+    margin: 0 -3.2%;
+    padding: 8px 30px;
+}
+.feedback_name {padding-top:15px }
+#feedback-form {
+  display: block;
+  width: 100%;
+  padding: 0 3% 60px;
+  font-family:'Open Sans', sans-serif;
+  background: #CFEBFF;
+}
+.feedback_name, .feedback_tel, .feedback_email, .feedback_file, .feedback_message {display:block; margin:5px 0;font-size:.9em;}
+[for="nameFF"], [for="telFF"], [for="emailFF"], [for="messageFF"] {display:block;vertical-align:middle;width:25%;padding:5px 0;float:left;}
+.feedback_file {margin:20px 0;}
+[name="fileFF[]"] {font-style:italic; color:#8f8f8f; width:75%; margin-left:25%;}
+[for="messageFF"] {line-height:.9;}
+
+#feedback-form [required] {
+  display:block;width:75%;padding:5px 30px;
+  border: 1px solid rgba(0,0,0,.1);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,.1) inset, 0 0 transparent;
+}
+#feedback-form [required]:hover {
+  border-color: #7eb4ea;
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,.1) inset, 0 0 transparent;
+}
+#feedback-form [required]:focus {
+  outline: none;
+  border-color: #7eb4ea;
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,.1) inset, 0 0 4px rgba(35,146,243,.5);
+  transition: .2s linear;
+}
+#feedback-form [type="submit"] {
+  display: inline-block;
+  left: 50%;
+  bottom: 2%;
+  margin-left: -50px;
+  position: absolute;
+  width: 100px;
+
+  padding: 9px;
+  border: none;
+  border-radius: 3px;
+  background: rgba(175, 223, 255, 0.9);
+  color: #00a7cf;
+  font:bold .9em 'Open Sans', sans-serif;
+  transition:.1s ease-out;
+}
+#feedback-form [type="submit"]:hover {
+  cursor:pointer;
+  background: rgba(143, 210, 255, 0.9);
+  color: #14606F;
+}
+#feedback-form [type="submit"]:focus, #feedback-form [type="file"]:focus {
+  box-shadow: 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+input[name="nameFF[]"] {
+	background: url(img/person.png) no-repeat 5px 50%;
+	background-color:#fff;
+}
+input[name="telFF[]"] {
+	background: url(img/tel.png) no-repeat 5px 50%;
+	background-color:#fff;
+}
+input[name="emailFF[]"] {
+	background: url(img/letter.png) no-repeat 5px 50%;
+	background-color:#fff;
+}
+.line {
+  position: relative;
+}
+.line::after {
+  position: absolute;
+  content: '';
+  left: 0; right: 0%;
+  bottom: -1px;
+  height: 1px;
+  display:inline-block;
+  border-bottom:1px dashed #069BCD;
+}
+/*
+-------end contact--------*/
+/*
+------block brands -------*/
+.brands {padding: 0px 3%; text-align:center;}
+.block-items {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+.block-items li {
+	display: inline-block;
+    margin:10px;
+    max-width: 148px;
+}
+
+.block-items li img {
+	max-height: 39px;
+    max-width: 148px;
+    border:1px solid transparent;
+}
+.block-items li img:hover {border:1px solid #95e0ef;}
+/*
+-------end brands--------*/
+.footer-links {
+	display:table;
+	height: 60px;
+	float:left;
+	background:#CFEBFF;/*#258DC8;*/
+}
+.footer-links a {
+	display:table-row;
+	text-decoration:none;
+	color:#00a7cf;
+}
+.footer-links a:hover {background:#00A9E0;color:#fff;}
+
+.footer-links a span {
+	display:table-cell;
+	padding: 2%;
+	vertical-align:middle;
+	text-align:center;
+	font-size:1em;
+	font-family:'Open sans', sans-serif;
+	line-height:.9;
+}
+.map-header {
+	display:block;
+	 text-align:center;
+	 font:normal .9em 'Open Sans', sans-serif;
+	 background:#258DC8;
+	 color:#fff;
+}
+.map-header {
+	 border-top:1px solid #9ed7ff;
+	 border-bottom:1px solid #9ed7ff;
+}
+
+
+.sub-footer {
+		padding:25px 0;
+		background:#CFEBFF;
+		font-family:'Open Sans',Arial;
+		line-height:.8;
+	}
+		.articles__header {display:block;}
+
+		.articles__header {padding-bottom:5px;}
+		.articles__link {font-size:.8em;}
+		.position {padding:0 5px;text-align:center;}
+
+		.icon-edit::before {
+		    content: "\e805";
+		    display: inline-block;
+		    font-size: 2em;
+		    text-align: center;
+		    width: 100%;
+		}
+		.ctrl-enter {
+			display:inline-block;
+			margin-top:5px;
+			padding: 2px 1px;
+			background:#3399ff;
+			color: #fff;
+		}
+
+.offer {
+	position:relative;
+	display:block;
+	text-transform:uppercase;
+	text-decoration:none;
+	white-space:nowrap;
+	top:6px;
+}
+
+
+.copyright {
+	text-align:center;
+	background:#CFEBFF;
+
+}
+.copyright-text {
+	display:block;
+	position:relative;
+	top:15px;
+	padding:10px 30px 25px;
+	font:normal 0.7em/.9 'Open Sans', sans-serif !important;
+	background:#b5e1ff;
+	color:#00A9E0;
+	border-top: 1px solid #9ed7ff;
+}
+.copyright_city {white-space:nowrap;}
+#toTop {
+    background: rgba(0, 0, 0, 0) url("img/page-top.png") no-repeat scroll 0 0;
+    bottom: 15px;
+    cursor: pointer;
+    display: none;
+    height: 51px;
+    opacity: 0.8;
+    position: fixed;
+    right: 0;
+    transition: background 0.5s ease-in 0.5s;
+    width: 31px;
+    z-index: 10000;
+}
+#toTop:hover {opacity: 1;}
+/* end БЛОК FOOTER */
+
+
+/*-------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+	PAGES 
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+-------------------------------------------------------------*/
+
+
+/*banner*/
+.phone_pseudo::before {
+	content: '+7 (863) 296-08-41';
+	position: relative;
+}
+.header_h1 {
+	position: absolute;
+	bottom:0;
+	width:100%;
+	/*padding-left: 8.3325%;*/
+	text-align: center;
+	margin:0;
+	background: rgba(37, 141, 200, 0.8) none repeat scroll 0 0;
+	color: #fff;
+    font-family: 'Open Sans Condensed',sans-serif;
+    text-shadow: 0 -1px 0 #585757;
+    text-transform: uppercase;
+}
+.header__main-img {display:none;overflow:hidden;}
+/*end banner*/
+/*
+---------------tabs category--------------*/
+
+.category {
+	margin:0 0 25px 0;
+	padding:40px 0 0 0;
+	list-style:none;
+	text-align:center;
+	background-color:#eee;
+}
+.category li {
+	position:relative;
+
+	display:inline-block;
+	padding:40px 0 10px 0;/*padding: 1% 1% 25px;*/
+	text-align:center;
+	/*border:1px solid black;*/
+}
+.category li a {
+	position:relative;
+	display:inline-block;/*table-cell;*/
+	width:139px;//width:210px;
+	height:111px;//height:160px; 
+	text-decoration: none;
+}
+.category li a mark {
+	position:absolute;
+	top: -24px;
+	display:table-cell;
+	height:24px;
+	vertical-align: middle;
+	width:100%;
+	background: #e2e8ec;
+	font:bold 1em "Roboto",Verdana;
+	color:#00a7cf;
+}
+.category li a:hover mark,
+.category li a.active-link mark {
+	background-color: #c6dbe6;
+	-webkit-transition: background-color 0.1s ease-in 0.1s;
+	-o-transition: background-color 0.1s ease-in 0.1s;
+	-moz-transition: background-color 0.1s ease-in 0.1s;
+	transition: background-color 0.1s ease-in 0.1s;
+}
+.category li a:hover,
+.category li a.active-link {
+	background-color:#e5e5e5;
+	-webkit-transition: background-color 0.1s ease-in 0.1s;
+	-o-transition: background-color 0.1s ease-in 0.1s;
+	-moz-transition: background-color 0.1s ease-in 0.1s;
+	transition: background-color 0.1s ease-in 0.1s;
+}
+/*----ballu-----*/
+#btab-1 {background-image: url(../img/ballu/small/nasten.png);}
+#btab-2 {background-image: url(../img/ballu/small/kasset.png);}
+#btab-3 {background-image: url(../img/ballu/small/kolonn.png);}
+#btab-4 {background-image: url(../img/ballu/small/napoln.png);}
+/*----daikin-----*/
+#dtab-1 {background-image: url(../img/daikin/small/nasten.png);}
+#dtab-2 {background-image: url(../img/daikin/small/kasset.png);}
+#dtab-3 {background-image: url(../img/daikin/small/kanal.png);}
+#dtab-4 {background-image: url(../img/daikin/small/kolonn.png);}
+#dtab-5 {background-image: url(../img/daikin/small/napoln.png);}
+#dtab-6 {background-image: url(../img/daikin/small/napoln-p.png);}
+#dtab-7 {background-image: url(../img/daikin/small/podpotol.png);}
+/*----electrolux----*/
+#etab-1 {background-image: url(../img/electrolux/small/nasten.png);}
+#etab-2 {background-image: url(../img/electrolux/small/kasset.png);}
+#etab-4 {background-image: url(../img/electrolux/small/kolonn.png);}
+#etab-6 {background-image: url(../img/electrolux/small/napoln-p.png);}
+#etab-7 {background-image: url(../img/electrolux/small/podpotol.png);}
+/*----fujitsu-----*/
+#ftab-1 {background-image: url(../img/fujitsu/small/nasten.png);}
+#ftab-2 {background-image: url(../img/fujitsu/small/kasset.png);}
+#ftab-3 {background-image: url(../img/fujitsu/small/kanal.png);}
+#ftab-5 {background-image: url(../img/fujitsu/small/napoln.png);}
+#ftab-6 {background-image: url(../img/fujitsu/small/napoln-p.png);}
+#ftab-7 {background-image: url(../img/fujitsu/small/podpotol.png);}
+/*----gree-----*/
+#gtab-1 {background-image: url(../img/gree/small/nasten.png);}
+#gtab-2 {background-image: url(../img/gree/small/kasset.png);}
+#gtab-3 {background-image: url(../img/gree/small/kanal.png);}
+#gtab-4 {background-image: url(../img/gree/small/kolonn.png);}
+#gtab-6 {background-image: url(../img/gree/small/napoln-p.png);}
+/*----hitachi-----*/
+#htab-1 {background-image: url(../img/hitachi/small/nasten.png);}
+/*----lg-----*/
+#ltab-1 {background-image: url(../img/lg/small/nasten.png);}
+/*----me-----*/
+#metab-1 {background-image: url(../img/me/small/nasten.png);}
+#metab-2 {background-image: url(../img/me/small/kasset.png);}
+#metab-3 {background-image: url(../img/me/small/kanal.png);}
+#metab-4 {background-image: url(../img/me/small/kolonn.png);}
+#metab-5 {background-image: url(../img/me/small/napoln.png);}
+#metab-7 {background-image: url(../img/me/small/podpotol.png);}
+/*----panasonic-----*/
+#ptab-1 {background-image: url(../img/panasonic/small/nasten.png);}
+#ptab-2 {background-image: url(../img/panasonic/small/kasset.png);}
+#ptab-3 {background-image: url(../img/panasonic/small/kanal.png);}
+#ptab-6 {background-image: url(../img/panasonic/small/napoln-p.png);}
+#ptab-7 {background-image: url(../img/panasonic/small/podpotol.png);}
+/*----pioneer-----*/
+#piotab-1 {background-image: url(../img/pioneer/small/nasten.png);}
+#piotab-2 {background-image: url(../img/pioneer/small/kasset.png);}
+#piotab-3 {background-image: url(../img/pioneer/small/kanal.png);}
+#piotab-6 {background-image: url(../img/pioneer/small/napoln-p.png);}
+/*----toshiba-----*/
+#ttab-1 {background-image: url(../img/toshiba/small/nasten.png);}
+#ttab-2 {background-image: url(../img/toshiba/small/kasset.png);}
+#ttab-3 {background-image: url(../img/toshiba/small/kanal.png);}
+#ttab-5 {background-image: url(../img/toshiba/small/napoln.png);}
+#ttab-7 {background-image: url(../img/toshiba/small/podpotol.png);}
+
+.category a[id*="tab-"] {
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+	background-size:contain;
+}
+/*.category a[id*="tab-"]:hover {
+	background-color:#e5e5e5;
+	transition: background-color 0.1s ease-in 0.1s;
+}*/
+
+.category li a .height-mark {height:auto;line-height:.8;}
+/*
+-----------------end tabs category------------*/
+
+/*---------------tabs series------------------*/
+
+ul.tabsPages {
+-webkit-box-shadow: inset 0px -7px 0px -4px rgba(207, 235, 255, 0.77);
+-moz-box-shadow:    inset 0px -7px 0px -4px rgba(207, 235, 255, 0.77);
+box-shadow:         inset 0px -7px 0px -4px rgba(207, 235, 255, 0.77);
+    margin:0;
+    width: 100%;
+
+    padding: 0;
+    text-align: center;
+}
+
+ul.tabsPages li{
+	border-radius:5px 5px 0 0;
+    display: inline-block;
+    margin:0 0.5%;
+    padding: 7px 5px;
+    white-space: nowrap;
+    line-height: 2;
+    
+    -webkit-box-shadow: inset 0px -6px 0px -4px rgba(0, 205, 255, 0.4);
+	-moz-box-shadow:    inset 0px -6px 0px -4px rgba(0, 205, 255, 0.4);
+	box-shadow:         inset 0px -6px 0px -4px rgba(0, 205, 255, 0.4);
+
+    font: normal 1.0em 'Roboto', Verdana;
+    text-align: center;
+    cursor: pointer;
+    background:#eee;
+    color:#00A7CF;
+}
+		ul.tabsPages li:hover{
+		background:#e5e5e5;
+		color:#333;
+	}
+.tabsPages li.activePages{
+	border-radius:5px 5px 0 0;
+	background:#fff;
+	border:3px solid #CFEBFF;
+    border-bottom: 1px solid #FFF;
+    box-shadow: 0 -6px 14px -6px #ddd;
+}
+	ul.tabsPages li.activePages:hover{
+		background:#E5E5E5;
+		cursor: default;
+		color:#1599D2;
+	}
+[id|="anchor-link"] section {
+    display: none;
+    padding: 1% 2% 2%;
+}
+[id|="anchor-link"] section.activePages {
+	display: block;
+    overflow: hidden;
+}
+
+/*---------------end tabs------------------*/
+/*------------content tabs----------------*/
+
+/*--Image product--*/
+.series {
+	font-family:'Roboto',Arial;
+	font-size:1em;
+}
+.imgPages {
+	position: relative;
+	left:-2%;
+	width:104%;
+	margin-top:20px;
+	margin-bottom:35px;
+	text-align: center;
+	-webkit-box-shadow: 0px 0px 30px 0px rgba(17, 144, 255, 0.12);
+	-moz-box-shadow:    0px 0px 30px 0px rgba(17, 144, 255, 0.12);
+	box-shadow:         0px 0px 30px 0px rgba(17, 144, 255, 0.12);
+}
+.imgPages a img {
+	width:18%;
+	min-width: 170px;
+	max-width:280px;
+	border: 1px solid transparent;
+	margin:10px 0;
+}
+.imgPages a:hover img {
+	position:relative;
+	z-index:1;
+	border-left: 1px solid #CFEBFF;
+	border-right: 1px solid #CFEBFF;
+	border-top: 1px solid #DFF1FF;
+	border-bottom: 1px solid #DFF1FF;
+
+	background-color:#EFF8FF;
+	transition:all 0.3s ease;
+	transform:scale(1.3);
+}
+
+
+/*--Image product--*/
+/*--table options--*/
+.striped {
+  width: 100%;
+  border-collapse: collapse;
+  color: #666;
+  font-family: Arial;
+  /*border: 1px dotted #ddd;*/
+  border-collapse: collapse;
+  font: 0.9em "Open Sans",sans-serif;
+  text-align: left;
+  margin: 0 0 10px 0;
+}
+.striped_acc {width:96%;margin: 40px 2%;}
+
+.striped tr:nth-of-type(odd) {
+  background: #FFFEEF;
+}
+
+.striped thead th {
+  padding: 15px 2px;
+  background: #f5f5f5;
+  font-weight: bold;
+}
+.striped td,
+th {
+  padding: 3px;
+  border: 1px solid #ddd;
+  text-align: center;
+  line-height: .9;
+}
+.striped_acc td {
+  text-align: left;
+}
+
+@media all and (max-width: 768px) {
+  .striped,
+  .striped * {
+    display: block;
+  }
+  .striped thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .striped tr {
+    border: 1px solid #ddd;
+  }
+  .striped tbody th {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    text-align: left;
+    background: #f5f5f5;
+  }
+  .striped td {
+    border: none;
+    border-bottom: 1px dotted #eee; 
+    position: relative;
+    padding-left: 65%; 
+  }
+  .striped_acc td {
+  	padding-left: 5px;
+  }
+  .striped td:before {
+    position: absolute;
+    left: 6px;
+    width: 70%; 
+    padding-right: 10px; 
+    white-space: nowrap;
+    text-align:left;
+    overflow: hidden;
+  }
+  .striped_kvk th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kvk td:nth-of-type(1):before {
+    content: "Тип радиочастотного кабеля";
+  }
+  .striped_kvk td:nth-of-type(2):before {
+    content: "Затухание, 100 МГц, дБ/м., у радиочастотного кабеля";
+  }
+  .striped_kvk td:nth-of-type(3):before {
+    content: "Тип жил питания и управления";
+  }
+  .striped_kvk td:nth-of-type(4):before {
+    content: "Сечение, мм., у жил питания и управления";
+  }
+  .striped_kvk td:nth-of-type(5):before {
+    content: "Кол-во жил питания и управления";
+  }
+  .striped_kvk td:nth-of-type(6):before {
+    content: "Материал оболочки";
+  }
+  .striped_kvk td:nth-of-type(7):before {
+    content: "Размер, мм (не более), оболочки";
+  }
+  .striped_kvk td:nth-of-type(8):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_kpsvv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kpsvv td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kpsvv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+  .striped_kpsvv td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+  .striped_kpsvv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_kpsvv_el th:nth-of-type(1):before {
+    content: "Номинальное сечение жил S, мм ";
+  }
+  .striped_kpsvv_el td:nth-of-type(1):before {
+    content: "Электрическое сопротивление цепи (двух жил пары) при температуре 20 °C, не более, Ом/км";
+  }
+  .striped_kpsvv_el td:nth-of-type(2):before {
+    content: "Электрическое сопротивление изоляции жил при температуре 20 °C, не менее, МОм х км";
+  }
+  .striped_kpsvv_el td:nth-of-type(3):before {
+    content: "Электрическая ёмкость пары, не более, нФ/км";
+  }
+    .striped_kpsvv_el td:nth-of-type(4):before {
+    content: "Коэффициент затухания на частоте 1 кГц, не более, дБ/км";
+  }
+    .striped_kpsvv_el td:nth-of-type(5):before {
+    content: "Рабочее напряжение, не более, В";
+  }
+
+
+   .striped_kmzhng th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kmzhng td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kmzhng td:nth-of-type(2):before {
+    content: "Электрическая ёмкость нф/км не более";
+  }
+  .striped_kmzhng td:nth-of-type(3):before {
+    content: "Сопротивление жилы ом/км не более";
+  }
+    .striped_kmzhng td:nth-of-type(4):before {
+    content: "Сопротивление изоляции Мом/км не менее";
+  }
+    .striped_kmzhng td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_kmvv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kmvv td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kmvv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+  .striped_kmvv td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+  .striped_kmvv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+	
+.striped_kpseng th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kpseng td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kpseng td:nth-of-type(2):before {
+    content: "Диаметр жилы, D, мм";
+  }
+  .striped_kpseng td:nth-of-type(3):before {
+    content: "Наружный размер, Dн, не более, мм";
+  }
+  .striped_kpseng td:nth-of-type(4):before {
+    content: "Масса кг/км";
+  }
+  .striped_kpseng td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+ 
+  .striped_kpseng_el th:nth-of-type(1):before {
+    content: "Номинальное сечение жил S, мм ";
+  }
+  .striped_kpseng_el td:nth-of-type(1):before {
+    content: "Диаметр жил d, мм";
+  }
+  .striped_kpseng_el td:nth-of-type(2):before {
+    content: "Электрическое сопротивление цепи (двух жил пары) при температуре 20 °C, не более, Ом/км";
+  }
+  .striped_kpseng_el td:nth-of-type(3):before {
+    content: "Электрическое сопротивление изоляции жил при температуре 20 °C, не менее, МОм х км";
+  }
+  .striped_kpseng_el td:nth-of-type(4):before {
+    content: "Электрическая ёмкость пары, не более, нФ/км";
+  }
+   .striped_kpseng_el td:nth-of-type(5):before {
+    content: "Коэффициент затухания на частоте 1 кГц, не более, дБ/км";
+  }
+  .striped_kpseng_el td:nth-of-type(6):before {
+    content: "Рабочее напряжение, не более, В";
+  }
+
+
+
+.striped_kspv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kspv td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kspv td:nth-of-type(2):before {
+    content: "Диаметр жилы, D, мм";
+  }
+  .striped_kspv td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+  .striped_kspv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_kspvg th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kspvg td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kspvg td:nth-of-type(2):before {
+    content: "Размер, мм";
+  }
+  .striped_kspvg td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+  .striped_kspvg td:nth-of-type(4):before {
+    content: "Индуктивность, мГн/км";
+  }
+  .striped_kspvg td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_ksbng-frls th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_ksbng-frls td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_ksbng-frls td:nth-of-type(2):before {
+    content: "Наружный размер Dн, не более, мм";
+  }
+  .striped_ksbng-frls td:nth-of-type(3):before {
+    content: "Мин. радиус изгиба, мм";
+  }
+  .striped_ksbng-frls td:nth-of-type(4):before {
+    content: "Масса кг/км";
+  }
+  .striped_ksbng-frls td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+    .striped_ksbng-frls-el th:nth-of-type(1):before {
+    content: "Номинальный диаметр жил D, мм ";
+  }
+  .striped_ksbng-frls-el td:nth-of-type(1):before {
+    content: "Эквивалентное сечение жил, мм";
+  }
+  .striped_ksbng-frls-el td:nth-of-type(2):before {
+    content: "Электрическое сопротивление цепи (двух жил пары) постоянному току при 20°C, не более, Ом/км";
+  }
+  .striped_ksbng-frls-el td:nth-of-type(3):before {
+    content: "Электрическая ёмкость пары, не более, пФ/м";
+  }
+  .striped_ksbng-frls-el td:nth-of-type(4):before {
+    content: "Рабочее напряжение, не более, В";
+  }
+
+
+   .striped_kipev th:nth-of-type(1):before {
+    content: "Число пар в кабеле, N ";
+  }
+  .striped_kipev td:nth-of-type(1):before {
+    content: "Наружный размер кабеля, не более, мм";
+  }
+  .striped_kipev td:nth-of-type(2):before {
+    content: "Мин. радиус изгиба, мм";
+  }
+  .striped_kipev td:nth-of-type(3):before {
+    content: "Масса кг/км., кабель КИПЭВ";
+  }
+  .striped_kipev td:nth-of-type(4):before {
+    content: "Масса кг/км., кабель КИПЭП";
+  }
+   .striped_kipev td:nth-of-type(5):before {
+    content: "Срок службы, не менее, лет";
+  }
+  .striped_kipev td:nth-of-type(6):before {
+    content: "Наличие и цены";
+  }
+   .striped_kipev-el th:nth-of-type(1):before {
+    content: "Электрическое сопротивление жилы постоянному току при температуре 20 °C, не более, Ом/100м ";
+  }
+  .striped_kipev-el td:nth-of-type(1):before {
+    content: "Асимметрия электрического сопротивления постоянному току жил в паре, не более, %";
+  }
+  .striped_kipev-el td:nth-of-type(2):before {
+    content: "Волновое сопротивление при частоте 1 МГц, Ом";
+  }
+  .striped_kipev-el td:nth-of-type(3):before {
+    content: "Электрическая ёмкость пары, не более, пФ/м";
+  }
+  .striped_kipev-el td:nth-of-type(4):before {
+    content: "Коэффициент затухания при частоте 1 МГц при температуре 20 °C, не более, дБ/100м";
+  }
+
+   .striped_kipvev th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kipvev td:nth-of-type(1):before {
+    content: "Число пар в кабеле, N";
+  }
+  .striped_kipvev td:nth-of-type(2):before {
+    content: "Наружный размер кабеля, Dн, не более, мм";
+  }
+  .striped_kipvev td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+  .striped_kipvev td:nth-of-type(4):before {
+    content: "Срок службы, не менее, лет";
+  }
+  .striped_kipvev td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+   .striped_kipvev-el td:nth-of-type(1):before {
+    content: "Электрическое сопротивление жилы постоянному току при температуре 20 °C, не более, Ом/100м";
+  }
+  .striped_kipvev-el td:nth-of-type(2):before {
+    content: "Асимметрия электрического сопротивления постоянному току проводников в паре, не более, %";
+  }
+  .striped_kipvev-el td:nth-of-type(3):before {
+    content: "Волновое сопротивление на частоте 1 МГц, Ом";
+  }
+  .striped_kipvev-el td:nth-of-type(4):before {
+    content: "Электрическая ёмкость пары, не более, пФ/м";
+  }
+  .striped_kipvev-el td:nth-of-type(5):before {
+    content: "Коэффициент затухания при частоте 1 МГц при температуре 20 °C, не более, дБ/100м";
+  }
+
+
+  .striped_kupev th:nth-of-type(1):before {
+    content: "Кабели ";
+  }
+  .striped_kupev td:nth-of-type(1):before {
+    content: "Число жил, сечение мм";
+  }
+  .striped_kupev td:nth-of-type(2):before {
+    content: "Диаметр у кабеля КУПВ, мм";
+  }
+  .striped_kupev td:nth-of-type(3):before {
+    content: "Диаметр у кабеля КУПВ-П, мм";
+  }
+  .striped_kupev td:nth-of-type(4):before {
+    content: "Диаметр у кабеля КУПВ-Пм, мм";
+  }
+  .striped_kupev td:nth-of-type(5):before {
+    content: "Масса у кабеля КУПВ, кг/км";
+  }
+  .striped_kupev td:nth-of-type(6):before {
+    content: "Масса у кабеля КУПВ-П, кг/км";
+  }
+  .striped_kupev td:nth-of-type(7):before {
+    content: "Масса у кабеля КУПВ-Пм, кг/км";
+  }
+    .striped_kupev td:nth-of-type(8):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_kupr th:nth-of-type(1):before {
+    content: "Число жил, сечение мм ";
+  }
+  .striped_kupr td:nth-of-type(1):before {
+    content: "Номинальный наружный диаметр, мм";
+  }
+  .striped_kupr td:nth-of-type(2):before {
+    content: "Расчетная масса, кг/км";
+  }
+  .striped_kupr td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+  .striped_kupr_el th:nth-of-type(1):before {
+    content: "Номинальное сечение жил S, мм ";
+  }
+  .striped_kupr_el td:nth-of-type(1):before {
+    content: "Выдерживает пониженное атмосферное давление, до кПа";
+  }
+  .striped_kupr_el td:nth-of-type(2):before {
+    content: "Сопротивление изоляции жил при 20 °С, МОм/км, не менее";
+  }
+  .striped_kupr_el td:nth-of-type(3):before {
+    content: "Электрическое сопротивление жил, Ом/км";
+  }
+
+
+  .striped_zkp th:nth-of-type(1):before {
+    content: "Тип кабеля - ";
+  }
+  .striped_zkp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_zkp td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+  .striped_zkp td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_zkp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_kmm th:nth-of-type(1):before {
+    content: "Число жил, мм ";
+  }
+  .striped_kmm td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+  .striped_kmm td:nth-of-type(2):before {
+    content: "Масса кг/км";
+  }
+   .striped_kmm td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+.striped_kspp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kspp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_kspp td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+  .striped_kspp td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_kspp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+  .striped_kspp_el td:nth-of-type(1):before {
+    content: "Частота, кГц ";
+  }
+  .striped_kspp_el td:nth-of-type(2):before {
+    content: "Волновое сопро-ние, Ом (с жилами) 0,9 мм";
+  }
+  .striped_kspp_el td:nth-of-type(3):before {
+    content: "Волновое сопро-ние, Ом (с жилами) 1,20 мм";
+  }
+  .striped_kspp_el td:nth-of-type(4):before {
+    content: "Коэффициент затухания, дБ/км (с жилами) 0,9 мм";
+  }
+   .striped_kspp_el td:nth-of-type(5):before {
+   content: "Коэффициент затухания, дБ/км (с жилами) 1,20 мм";
+  }
+
+  .striped_mksb th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mksb td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_mksb td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+ .striped_mksb td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mksb td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_mksashp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mksashp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_mksashp td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+ .striped_mksashp td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mksashp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_mrmp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mrmp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_mrmp td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+ .striped_mrmp td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mrmp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_sbvg th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_sbvg td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_sbvg td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+ .striped_sbvg td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_sbvg td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_sbzpu th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_sbzpu td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_sbzpu td:nth-of-type(2):before {
+    content: "Система скрутки";
+  }
+  .striped_sbzpu td:nth-of-type(3):before {
+    content: "Диаметр, мм";
+  }
+ .striped_sbzpu td:nth-of-type(4):before {
+    content: "Масса кг/км";
+  }
+   .striped_sbzpu td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_tzg th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_tzg td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_tzg td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+ .striped_tzg td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_tzg td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_rg213 td:nth-of-type(1):before {
+    content: "Частота, МГц ";
+  }
+  .striped_rg213 td:nth-of-type(2):before {
+    content: "Затухание, дБ/100м";
+  }
+
+
+    .striped_ftp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_ftp td:nth-of-type(2):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_ftp td:nth-of-type(3):before {
+    content: "Наружный диаметр, мм";
+  }
+   .striped_ftp td:nth-of-type(4):before {
+    content: "Масса 1 км, кг";
+  }
+   .striped_ftp td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+     .striped_utp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_utp td:nth-of-type(2):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_utp td:nth-of-type(3):before {
+    content: "Наружный диаметр, мм";
+  }
+   .striped_utp td:nth-of-type(4):before {
+    content: "Масса 1 км, кг";
+  }
+   .striped_utp td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+       .striped_kvbbshv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kvbbshv td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_kvbbshv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_kvbbshv td:nth-of-type(3):before {
+    content: "Масса 1 км, кг";
+  }
+   .striped_kvbbshv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+         .striped_kvvgng th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_kvvgng td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_kvvgng td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_kvvgng td:nth-of-type(3):before {
+    content: "Масса 1 км, кг";
+  }
+   .striped_kvvgng td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+         .striped_mgshv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mgshv td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_mgshv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_mgshv td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mgshv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+        .striped_mkekshvng th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mkekshvng td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_mkekshvng td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_mkekshvng td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mkekshvng td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+       .striped_mksh th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+  .striped_mksh td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+   .striped_mksh td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_mksh td:nth-of-type(3):before {
+    content: "Масса кг/км";
+  }
+   .striped_mksh td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+
+       .striped_mgtf th:nth-of-type(1):before {
+    content: "МГТФ, МГТФэ ";
+  }
+  .striped_mgtf td:nth-of-type(1):before {
+    content: "Масса км/кг";
+  }
+   .striped_mgtf td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+   .striped_mgtf td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+       .striped_palo th:nth-of-type(1):before {
+    content: "Номинальное сечение, мм  ";
+  }
+  .striped_palo td:nth-of-type(1):before {
+    content: "Диаметр мм, провод ПАЛ";
+  }
+  .striped_palo td:nth-of-type(2):before {
+    content: "Диаметр мм, провод ПАЛО";
+  }
+   .striped_palo td:nth-of-type(3):before {
+    content: "Масса км/кг, провод ПАЛ";
+  }
+   .striped_palo td:nth-of-type(4):before {
+    content: "Масса км/кг, провод ПАЛО";
+  }
+
+
+         .striped_mpo th:nth-of-type(1):before {
+    content: "Номинальное сечение, мм  ";
+  }
+  .striped_mpo td:nth-of-type(1):before {
+    content: "Диаметр мм, провод МПО";
+  }
+  .striped_mpo td:nth-of-type(2):before {
+    content: "Диаметр мм, провод МПОЭ";
+  }
+   .striped_mpo td:nth-of-type(3):before {
+    content: "Масса км/кг, провод МПО";
+  }
+   .striped_mpo td:nth-of-type(4):before {
+    content: "Масса км/кг, провод МПОЭ";
+  }
+
+
+  .striped_okktm td:nth-of-type(1):before {
+    content: "Количество ОВ в кабеле  ";
+  }
+  .striped_okktm td:nth-of-type(2):before {
+    content: "Количество ОВ в модуле";
+  }
+  .striped_okktm td:nth-of-type(3):before {
+    content: "Диаметр, мм";
+  }
+   .striped_okktm td:nth-of-type(4):before {
+    content: "Масса км/кг";
+  }
+   .striped_okktm td:nth-of-type(5):before {
+    content: "Растягивающее усилие, кН";
+  }
+     .striped_okktm td:nth-of-type(6):before {
+    content: "Раздавливающее усилие, Н/1см";
+  }
+   .striped_okktm td:nth-of-type(7):before {
+    content: "Минимальный радиус изгиба кабеля, мм";
+  }
+
+
+ .striped_okstm td:nth-of-type(1):before {
+    content: "Количество ОВ в кабеле  ";
+  }
+  .striped_okstm td:nth-of-type(2):before {
+    content: "Количество ОВ в модуле";
+  }
+  .striped_okstm td:nth-of-type(3):before {
+    content: "Диаметр, мм";
+  }
+   .striped_okstm td:nth-of-type(4):before {
+    content: "Масса км/кг";
+  }
+   .striped_okstm td:nth-of-type(5):before {
+    content: "Растягивающее усилие, кН";
+  }
+     .striped_okstm td:nth-of-type(6):before {
+    content: "Раздавливающее усилие, Н/1см";
+  }
+   .striped_okstm td:nth-of-type(7):before {
+    content: "Минимальный радиус изгиба кабеля, мм";
+  }
+
+  .striped_pvzh th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_pvzh td:nth-of-type(1):before {
+    content: "Число жил и сечение, мм";
+  }
+  .striped_pvzh td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+   .striped_pvzh td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_pvzh td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_pvzh th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_pvzh td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_pvzh td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+   .striped_pvzh td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+     .striped_pvzh td:nth-of-type(4):before {
+    content: "Электрическое сопротивление Ом/км";
+  }
+   .striped_pvzh td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_prppm th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_prppm td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_prppm td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+   .striped_prppm td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_prppm td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_trv th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_trv td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+  .striped_trv td:nth-of-type(2):before {
+    content: "Толщина изоляции, мм";
+  }
+   .striped_trv td:nth-of-type(3):before {
+    content: "Суммарная толщина оболочки, мм";
+  }
+    .striped_trv td:nth-of-type(4):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_trv td:nth-of-type(5):before {
+    content: "Масса, кг/км";
+  }
+   .striped_trv td:nth-of-type(6):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_tpp th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_tpp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+    .striped_tpp td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_tpp td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_tpp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+     .striped_shtlp th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_shtlp td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+    .striped_shtlp td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_shtlp td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_shtlp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+       .striped_prks th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_prks td:nth-of-type(1):before {
+    content: "Число жил, мм";
+  }
+    .striped_prks td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_prks td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_prks td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+         .striped_rkgm th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_rkgm td:nth-of-type(1):before {
+    content: "Сечения, мм";
+  }
+    .striped_rkgm td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_rkgm td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_rkgm td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_aabl th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_aabl td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+    .striped_aabl td:nth-of-type(2):before {
+    content: "Толщина изоляции жил, мм";
+  }
+    .striped_aabl td:nth-of-type(3):before {
+    content: "Толщина алюминиевой оболочки, мм";
+  }
+   .striped_aabl td:nth-of-type(4):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_aabl td:nth-of-type(5):before {
+    content: "Масса, кг/км";
+  }
+   .striped_aabl td:nth-of-type(6):before {
+    content: "Наличие и цены";
+  }
+
+
+           .striped_asb2l th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_asb2l td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_asb2l td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_asb2l td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_asb2l td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+ .striped_aashv th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_aashv td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+    .striped_aashv td:nth-of-type(2):before {
+    content: "Толщина изоляции жил, мм";
+  }
+    .striped_aashv td:nth-of-type(3):before {
+    content: "Толщина свинцовой оболочки, мм";
+  }
+   .striped_aashv td:nth-of-type(4):before {
+    content: "Наружный диаметр, мм";
+  }
+  .striped_aashv td:nth-of-type(5):before {
+    content: "Масса, кг/км";
+  }
+   .striped_aashv td:nth-of-type(6):before {
+    content: "Наличие и цены";
+  }
+
+
+   .striped_vbbshv th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_vbbshv td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_vbbshv td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+    .striped_vbbshv td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_vbbshv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+     .striped_vvg th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+  .striped_vvg td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_vvg td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_vvg td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_vvg td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+  .striped_vvgng-frls th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_vvgng-frls td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_vvgng-frls td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_vvgng-frls td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_vrg th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_vrg td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_vrg td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_vrg td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+    .striped_kg th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_kg td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_kg td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_kg td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_kgn th:nth-of-type(1):before {
+    content: "Марка кабеля  ";
+  }
+      .striped_kgn td:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_kgn td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_kgn td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_kgn td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_kgesh th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_kgesh td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_kgesh td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_kgesh td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_nrshm th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_nrshm td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_nrshm td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_nrshm td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_pv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_pv td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_pv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_pv td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_pv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+    .striped_pvs th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_pvs td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_pvs td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_pvs td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_puvv th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_puvv td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_puvv td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_puvv td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_rpshe th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_rpshe td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_rpshe td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_rpshe td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_rpshe td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_sip th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_sip td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_sip td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_sip td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_sip td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+
+   .striped_shvvp th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_shvvp td:nth-of-type(1):before {
+    content: "Толщина изоляции, мм";
+  }
+   .striped_shvvp td:nth-of-type(2):before {
+    content: "Толщина оболочки, мм";
+  }
+    .striped_shvvp td:nth-of-type(3):before {
+    content: "Номинальные токовые нагрузки, А, не более";
+  }
+    .striped_shvvp td:nth-of-type(4):before {
+    content: "Масса, кг/км";
+  }
+   .striped_shvvp td:nth-of-type(5):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_nym th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_nym td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_nym td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_nym td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_nym td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+      .striped_nym th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_nym td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_nym td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_nym td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_nym td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+        .striped_kmpv th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_kmpv td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_kmpv td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_kmpv td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_kmpv td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+
+        .striped_kpvl th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+        .striped_kpvl td:nth-of-type(1):before {
+    content: "Число жил и сечение";
+  }
+   .striped_kpvl td:nth-of-type(2):before {
+    content: "Диаметр, мм";
+  }
+    .striped_kpvl td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_kpvl td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+          .striped_pnsvp th:nth-of-type(1):before {
+    content: "Марка кабеля ";
+  }
+   .striped_pnsvp td:nth-of-type(1):before {
+    content: "Диаметр жил, мм";
+  }
+     .striped_pnsvp td:nth-of-type(2):before {
+    content: "Наружный диаметр, мм";
+  }
+    .striped_pnsvp td:nth-of-type(3):before {
+    content: "Масса, кг/км";
+  }
+   .striped_pnsvp td:nth-of-type(4):before {
+    content: "Наличие и цены";
+  }
+
+
+        .striped_pgva th:nth-of-type(1):before {
+    content: "Число жил и сечение ";
+  }
+   .striped_pgva td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_pgva td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_pgva td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+
+        .striped_bsm th:nth-of-type(1):before {
+    content: "Сечение проволоки ";
+  }
+   .striped_bsm td:nth-of-type(1):before {
+    content: "Диаметр, мм";
+  }
+    .striped_bsm td:nth-of-type(2):before {
+    content: "Масса, кг/км";
+  }
+   .striped_bsm td:nth-of-type(3):before {
+    content: "Наличие и цены";
+  }
+
+
+
+  }
+.tooltip {
+	    display: inline-block;
+	    cursor: help;
+	    border-bottom: 1px dashed #6ab260;
+	    color: #6ab260;
+	  }
+	.tooltip:hover::before {
+	    content: "Цены по Вашему запросу!! Позвоните нам или напишите, мы сразу сообщим Вам о наличии товара на складе и его стоимости.";
+	    opacity: 0;
+	    margin-left: -170px;
+	    margin-top: -110px;
+	    padding: 7px;
+	    position: absolute;
+	    display: inline-block;
+	    width: 170px;
+	    border-radius: 15px 15px 0px 15px;
+	    line-height: .9;
+	    visibility: hidden;
+	    text-align: left;
+	    
+	    background: #fff;
+	    border: 6px solid rgba(0, 0, 0, 0.3);
+	    font-family: Arial;
+	    font-size: 1em;
+	    background-clip: padding-box;
+	    color: #6ab260;
+	  }
+	  
+	.tooltip:hover::before {
+	    opacity: 1;
+	    visibility: visible;
+	    cursor:text;
+	}
+.tooltip-delivery::before {
+  content: '*';
+  cursor:help;
+  display:inline-block;
+}
+.tooltip-delivery:hover::after {
+  content:'При покупке на сумму от 5000 руб.';
+  display:inline-block;
+  padding:15px;
+  width:250px;
+  margin-left:-250px;
+  margin-top:-75px;
+  position:absolute;
+  z-index:200;
+  background:#FFF;
+  border:6px solid rgba(0, 0, 0, 0.3);
+  border-radius:6px;
+  line-height:.95;
+  font-family:'Open Sans',Arial;
+  font-size:.9em;
+  background-clip:padding-box;
+  color:#6ab260;
+  text-align:left;
+}
+/*--end table options--*/
+/*
+-----About manufacturer & features air condition------*/
+.manufacturers-and-features {padding-bottom:2%;}
+.manufacturers-block, .features-block {padding:0 2%;}
+.manufacturers-block {margin-bottom:2%;}
+
+.manufacturers__header, .features__header {
+    display: block;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+
+    background-color: #cfebff;
+    color: #00a7cf;
+    font: bold 0.9em/.9 'Open Sans', sans-serif;
+}
+.manufacturers-logo {
+	float: left;
+    margin: 0 15px 15px 0;
+    max-width: 85%;
+}
+.manufacturers-block p:not([class="spoiler-box"])	{
+	font: 0.9em 'Open Sans',sans-serif !important;
+    margin: 0;
+    padding: 3px;
+    text-indent: 1.5em;
+}
+
+.spoiler-box {
+    display: none;
+    padding-bottom: 28px;
+}
+
+.folded::before {
+content:"";
+position: absolute;
+top:-37px;
+display:block;
+min-height:35px;
+width:100%;
+cursor:text;
+
+background: -moz-linear-gradient(top,  rgba(44,48,51,0) 0%, rgba(44,48,51,0.81) 33%, rgba(44,48,51,1) 100%);
+background: -webkit-linear-gradient(top,  rgba(44,48,51,0) 0%,rgba(44,48,51,0.81) 33%,rgba(44,48,51,1) 100%);
+background: linear-gradient(to bottom,  rgba(44,48,51,0) 0%,rgba(44,48,51,0.81) 33%,rgba(44,48,51,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002c3033', endColorstr='#2c3033',GradientType=0 );
+}
+.folded, .unfolded {
+		min-height:15px;
+		position:relative;
+		left: -2%;
+		display:block;
+   		border-top: 1px solid #C3CBD1;
+   		width: 104%;
+}
+.folded {
+   background: url(img/triangle_down_blue.png) no-repeat 50% 50%;
+}
+.unfolded {
+   background: url(img/triangle_up_blue.png) no-repeat 50% 50%;
+}
+.foldedPages::before {
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.81) 33%, rgba(255,255,255,1) 100%);
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.81) 33%,rgba(255,255,255,1) 100%);
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.81) 33%,rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+}
+.foldedPages {
+	width: auto;
+	left:0;
+	border-top: 1px solid #00cdff;
+	background-color:#EFF8FF;
+	display: block;
+    min-height: 15px;
+}
+
+.table-list-products {
+    margin: 15px 6%;
+    text-align: left;
+    width: 88%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    font: 0.9em "Open Sans",sans-serif;
+}
+.table-list-products thead, .table-list-products tbody {
+    margin: 0;
+    padding: 0;
+}
+.table-list-products thead th {
+    border-right: none;
+    padding:10px;
+    text-align: center;
+}
+.table-list-products tbody th, .table-list-products tbody td {
+	border:none;
+    border-bottom: 1px solid #ddd;
+    padding: 7px 10px;
+    text-align: left;
+}
+/*
+-----end About manufacturer & features air condition------*/
+.where-buy {
+	padding:8px 5px 8px 2%;
+	background-color:#cfebff;
+	color: #00a7cf;
+    font-family:"Open Sans",sans-serif;
+}
+.content-description {margin: 0 2%;font-family: "Open Sans",sans-serif;}
+.content-description strong, 
+.content-description ul {font-size: .9em;}
+/*
+-----end pages style--------------------------------------*/
+
+/*-------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+	All Media Queries
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+---------------------------------------------------------------
+-------------------------------------------------------------*/
+
+
+@media all and (max-width:239px) {
+	body > * {display:none;}
+	body::after {
+		content: "Область видимости для просмотра сайта слишком мала.";
+	}
+}
+@media all and (max-width:767px) {
+	.menu-mobile-link + .menu {
+		position: absolute;
+    	z-index: 30000;
+		right:0;
+    	min-width: 240px;
+    	width: 195%;
+    	padding: 10px 0;
+		background: #1294f1;
+	}
+	.menu-mobile-link + .menu li {
+		display:block;
+		margin: 0;
+	}
+	.menu-mobile-link + .menu li a {
+		position:relative;
+		z-index:5;
+		display:block;
+		padding:5px;
+		color:#CFE5FF;
+	}
+
+	/*----------Pages------------*/
+	.img-product {
+		padding: 3% 2%;
+	}
+
+	/*---------End Pages---------*/
+}
+
+/*
+	Extra-small (min 240px)
+
+---------------------------------------------------------------*/
+@media all and (min-width:240px) {
+	.menu {display:none;}
+
+	.header {
+			border-top:none;
+			border-bottom:none;
+		}
+	.header__logo {
+				padding-top:24.5px;
+				padding-bottom:24.5px;
+			}
+	.header .col-es_9 {
+			border-top:1px solid #D0D0D0;
+			border-bottom:1px solid #D0D0D0;
+		}
+	.header .col-es_3 {
+			background:#1294F1;
+		}
+	/* block banner */
+	.index-page-banner {
+		background-image: url('img/index-page-banner_240-min.jpg');
+		}
+	.text__slogan {
+			display:none;
+		}
+	.phone__number {
+			font-size:1.1em;
+		}
+	/* block banner */
+
+	/* block main */
+	.prolog__header {
+	 	font-size: .9em;
+	 	}
+	.index-page-banner_our-products {
+		background-image: url('img/index-main_480px-max_our-products.jpg');
+		}
+	.index-page-banner_our-company {
+		background-image: url('img/index-main_480px-max_our-company.jpg');
+		}
+	.wrap-why-we-box {
+		display:none;
+	}
+	.article-header {
+		font-size: 1.3em;
+	}
+	.article-sub-header-index-page__h3 {font-size: 0.9em;}
+	.article-sub-header-index-page__h3 + p {display:none;}
+
+	.splits-menu {padding:0} /*padding:0 3%*/
+	.js-tabs {display:none;}/*block*/
+	.js-tabs_divs .main-block {min-height:0;display:block;}/*539px, none*/
+	.main-block-content {display:none;}/*block*/
+	.js-tabs_divs [class*="brand-"] {background-image:transparent;}
+	.bkg-bottom {position:static;}/*absolute, background-color:rgba(0, 141, 222, 0.5)*/
+	.split_link {display:block;padding:2%;font-weight:normal;font-size:.9em;} /*inline-block, 30px, bold, 1em*/
+	.split_link > span {display:none;}/*inline*/
+
+	.splits-menu {background:#008DDE;}
+	.main-block:last-child .bkg-bottom {border-bottom:none;}
+	.bkg-bottom {border-bottom:1px solid #269EE3;}
+	.split_link:hover {background:#00A9E0;}
+
+
+	.menu-block_ul li a {font-size:.9em;}
+	.menu-block_header {font-weight:normal;}
+
+	/*block banner-discount*/
+	.block-hide__text_free, .block-hide__text_free * {display: none;}
+	.discount_special-offer {
+		left:50%;
+		margin-left:-124px; 
+	}
+	.discount_special-offer { 
+		font-size:1.5em;
+	}
+	.discount_special-offer::before, .discount_special-offer::after {
+    	border-width: 21px;
+    }
+    .discount_special-offer::before {left:-42px;}
+	/*end block banner-discount*/
+
+	/*block services*/
+	.multitab-widget li a span {display:none;}
+	a[href^="#multicolumn"] [class*="icon-"] {width:100%;padding:0;text-align:center;}
+	.h_align {text-align:center;font-weight:normal;}
+	/*end block services*/
+	
+	/* block main */
+
+	.contact-shop, .contact-form{padding:0;}
+	.footer-links a span {font-size:.9em;}
+
+	/*-----------Pages------------*/
+	/*.description-product {
+		padding:0 2%;
+	}*/
+	.padding-articles {
+		padding: 0 2%;
+	}
+	.header_h1 {font-size:1.5em;line-height: 1;}
+	/*.slogan, .header__main-img {display: none;}*/
+	/*tabs*/
+		ul.tabsPages {
+			box-shadow: none;
+			background: #eee;
+			padding: 4px 0;
+		}
+		.tabsPages li.activePages {
+			background: #e5e5e5;
+			border: none;
+			border-radius: 0;
+			box-shadow: none;
+		}
+		ul.tabsPages li {
+			border-radius: 0;
+			box-shadow: none;
+			margin:2px 0;
+		}
+	/*end tabs*/
+	.where-buy {
+		font-size:1em;
+		}
+		/*footer*/
+
+		/*footer*/
+	/*--------End Pages----------*/
+
+}
+
+/*
+	Small (min 480px)
+---------------------------------------------------------------*/
+@media all and (min-width:480px) {
+	.header__logo {
+		width:181px;
+		padding-top:19px;
+		padding-bottom:19px;
+	}
+	.menu-mobile-link_button {
+				font-size: 1.7em;
+				top:33%;
+			}
+
+	/* block banner */
+	.text__slogan {
+			display:inline-block;
+		}
+	.text__slogan_our-products {
+			display:inline-block;
+			position: relative;
+    		top: 40%;
+    		font-size:1.2em;
+		}
+		
+	.slogan, .wrap-welcome {
+		font-size:1.6em;
+	}
+	.index-page-banner {
+		background-image: url('img/index-page-banner_481-min.jpg');
+		}
+	/* block banner */
+
+	/* block main */
+	.prolog__header {
+	 	font-size: 1em;
+	 	}
+	.section-products__cables, .section-products__electric {
+		font-size: 1em;
+	}
+	.wrap-why-we {
+		font-size:1.6em;	
+	}
+	.article-header {
+		font-size:1.6em;	
+	}
+	.article-sub-header-index-page__h3 {font-size: 1em;}
+	.article-sub-header-index-page__h3 + p {display:block;}
+
+	.index-page-banner_our-products {
+		background-image: url('img/index-main_767px-max_our-products.jpg');
+		}
+	.index-page-banner_our-company {
+		background-image: url('img/index-main_767px-max_our-company.jpg');
+		}
+	.main-block{overflow:visible;} /*hidden*/
+	.bkg-bottom {display:table;width:25%;} /*block, 100%*/
+	.split_link {display: table-cell;} /*block*/
+	.main-block:last-child .bkg-bottom {border-bottom:1px solid #269EE3;}
+
+	.bkg-bottom {float:left;}
+	.split_link {
+		height:50px;
+		vertical-align:middle;
+		line-height:.9;
+	}
+	/*block banner-discount*/
+	.block-hide, .block-hide * {display: none;}
+
+	.discount_special-offer { 
+		font-size:1.6em;
+	}
+	.discount_special-offer::before, .discount_special-offer::after {
+    	border-width: 21px;
+    }
+    .discount_special-offer::before {left:-42px;}
+    .discount-link-blocks span b {
+    	font-size: 1.6em;
+    }
+	/*end block banner-discount*/
+	
+	.section-products__cables h3 {font-size: 1em;}
+
+
+	/*block services*/
+	.h_align {text-align:left;font-weight:bold;}
+	/*end block services*/
+
+	#discount {font-size:1.5em;}
+
+	/* block main */
+
+	.contact-shop, .contact-form{padding:0 5%;}
+
+	.g-captcha__block {margin-left:25%;overflow: hidden;}
+
+	/*-----------Pages------------*/
+	.header_h1 {position:absolute; font-size:1.6em;line-height: normal;}
+	
+	.features {
+		padding: 15px 0;
+	}
+
+	.icon-edit::before {
+		position:absolute;
+		margin-left: -35px;
+		margin-top:3px;
+		width:auto;
+		text-align:left;
+		display:inline;
+	}
+		ul.tabsPages li{
+	    padding: 15px 18px 12px;
+	}
+	/*---------End Pages----------*/
+}
+
+/*
+	Medium (min 768px)
+---------------------------------------------------------------*/
+
+@media all and (min-width:768px) {
+	.menu-mobile-link {display:none;}
+	.header .menu-mobile {display:none;}
+	.header .col-sm_9, .header .col-es_9 {border:none;}
+	.header .col-sm_3, .header .col-es_3 {background:none;}
+
+	.menu {
+		display: block;
+	}
+
+	.header {
+			border-top:1px solid #D0D0D0;
+			border-bottom:1px solid #D0D0D0;
+			overflow: hidden;
+		}
+	.header__main-img {display: none;}
+	/* block banner */
+	.index-page-banner {
+		background-image: url('img/index-page-banner.jpg');
+		}
+	.index-page-banner_our-products {
+		background-image: url('img/index-main_768px-our-products.jpg');
+		}
+	.index-page-banner_our-company {
+		background-image: url('img/index-main_768px-our-company.jpg');
+		}
+	.slogan, .wrap-welcome {
+		font-size:1.8em;
+	}
+	.slogan {
+		top:15%;
+		line-height:.9;
+		width: 33.33333333%;
+	}
+	.slogan_our-products {
+		width: 33.33333333%;
+		height:100%;
+		top: 0;
+	}
+	.text__slogan_our-products {padding:0 15px;}
+	.wrap-slogan, .wrap-slogan_our-products {
+			display:inline-block;
+			max-width: 80%;
+			padding: 10px 5px;
+	}
+	.wrap-slogan_our-products {
+		height:100%;
+	}
+	.slogan, .slogan_our-products {
+			position:absolute;
+			left:0;
+		}
+	.wrap-welcome {display: block;}
+	/* block banner */
+
+	/* block main */
+	.wrap-why-we {
+		font-size:1.8em;	
+	}
+	.wrap-why-we-box {
+		display:block;
+	}
+	.tab-main-content_img {
+		max-width:60%;
+	}
+	.img-product {
+		max-width: 40%;
+	}
+	.section-products__cables h3, .section-products__electric h3 {font-size: 1em;}
+
+	.splits-menu {padding:0 3%} /*padding:0 3%*/
+	.js-tabs {display:block;max-width:24%;}/*block*/
+	.js-tabs_divs .main-block {min-height:539px;display:none;}/*539px, none*/
+	.main-block-content {display:block;}/*block*/
+	.bkg-bottom {position:absolute;}/*absolute, background-color:rgba(0, 141, 222, 0.5)*/
+	.split_link {display:inline-block;padding:30px;font-weight:bold;font-size:1em;} /*inline-block, 30px, bold, 1em*/
+	.split_link > span {display:inline;}/*inline*/
+
+	.splits-menu {background:none;}
+	.main-block:last-child .bkg-bottom {border-bottom:none;}
+	.bkg-bottom {border-bottom:none;}
+	.split_link:hover {background:#00A9E0;}
+
+
+	.main-block{overflow:hidden;} /*hidden*/
+	.bkg-bottom {display:block;width:100%;} /*block, 100%*/
+	.main-block:last-child .bkg-bottom {border-bottom:none;}
+
+	.bkg-bottom {float:none;}
+	.split_link {
+		height:auto;
+		line-height:normal;
+	}
+	.bkg_our-products {
+		position:relative;
+		margin-bottom:20px;
+		padding-top:17.2917%;
+		overflow: hidden;
+		background-size: cover;
+		background-repeat:no-repeat;
+		background-position:50% 0;
+		background-image: url('img/index-main_768px-our-products.jpg');
+	}
+.slogan-2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33.3333%;
+    z-index: 3;
+    font-family: "Open Sans Condensed",sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.wrap-slogan-2 {
+	display: inline-block;
+    max-width: 80%;
+    padding: 40px 20px;
+    background: black;
+    opacity: 0.5;
+    color: #3abbf2;
+}
+.text__slogan-2 {
+    display: inline-block;
+    color: #3abbf2;
+}
+.accordion-block strong {
+    line-height: 2;
+}
+
+
+	.menu-block_ul li a {font-size:1em;}
+
+	/*accordion-block*/
+	.section-products__cables {padding:0 1.5% 0 3%;}
+	.section-products__electric{padding:0 3% 0 1.5%;}
+	.description_p {min-height:95px;}
+	/*end accordion-block*/
+
+	/*block services*/
+	.multitab-widget li a span {display:table-cell;text-transform: none; line-height:.9;font-size:.9em;}
+	a[href^="#multicolumn"] [class*="icon-"] {width:40%;padding:1.5%;text-align:right;}
+	.multitab-widget-content strong {font-weight:bold;}
+	/*end block services*/
+
+	#discount {font-size:1.8em;}
+
+	/* block main */
+	.contact-shop, .contact-form{padding:0 3.5%;}
+
+	/*-----------Pages------------*/
+	.wrap-slogan, .wrap-slogan_our-products {
+			visibility:visible;
+		}
+	.wrap-features {
+		padding-right:3%;
+	}
+	.padding-left {
+		padding-left: 2%;
+	}
+	.description-product {
+		padding:0;
+	}
+	.trigger {
+    	padding:10px 10px 10px 20px;
+    }
+    .item_construction {padding-left:auto;}
+    .item_specifications, .item_articles {
+    	padding: 0 80px;
+	}
+	.header_h1 {font-size:2.2em;}
+	.slogan {display: block;}
+		.category li a {
+			width:163px; 
+			height:130px;
+		}
+	.series {text-align:left;}
+	.imgPages {text-align: left;}
+	/*tabs*/
+		ul.tabsPages {
+			box-shadow: 0 -7px 0 -4px rgba(207, 235, 255, 0.77) inset;
+			background: #fff;
+			padding:0;
+		}
+		.tabsPages li.activePages {
+			background: #fff;
+			border:3px solid #CFEBFF;
+    		border-bottom: 1px solid #FFF;
+			border-radius: 5px 5px 0 0;
+			box-shadow: 0 -6px 14px -6px #ddd;
+		}
+		ul.tabsPages li.activePages:hover{
+			background:#fff;
+		}
+		ul.tabsPages li {
+			border-radius: 5px 5px 0 0;
+			box-shadow: 0 -6px 0 -4px rgba(0, 205, 255, 0.4) inset;
+			margin: 0 0.5%;
+		}
+		#container input + label {height:160px;margin:0 3%;}
+	/*end tabs*/
+		.splits-options td, .splits-options th {border: 1px solid #ddd;}
+		.where-buy {
+			color: #fff;
+		    font: 2.2em "Open Sans Condensed",sans-serif;
+		    padding-left: 60px;
+		    text-shadow: 0 -1px 0 #585757;
+		    text-transform: uppercase;
+			line-height:1.1;
+			background:rgba(37, 141, 200, 0.8);
+		}
+		.offer {top:0}
+		.manufacturers-block {margin-bottom:0;}
+		/*footer*/
+		.sub-footer {
+			padding:25px 15%;
+		}
+		.copyright-text {
+			display:inline-block;
+			position:relative;
+			top:15px;
+			padding:10px 6% 25px;
+			-moz-border-radius-topleft: 90px;
+			-webkit-border-top-left-radius: 90px;
+			border-top-left-radius: 90px;
+			-moz-border-radius-topright: 90px;
+			-webkit-border-top-right-radius: 90px;
+			border-top-right-radius: 90px;
+		}
+		.offer {display:inline;}
+		.offer::after {
+			content:'';
+			position:absolute;
+			left:15px;
+			right:0;
+			bottom: -1px;
+			height:1px;
+			background:#069bcd;
+		}
+		.offer::before {
+			content:'|';
+			margin:0 5px;
+		}
+		/*end footer*/
+	/*-----------Pages------------*/
+}
+
+/*
+	Large (min 1280px)
+---------------------------------------------------------------*/
+
+@media all and (min-width:1280px) {
+	.header {
+			border-top:1px solid #D0D0D0;
+			border-bottom:1px solid #D0D0D0;
+		}
+			.header__logo {
+				width:230px; 
+				padding-bottom: 11px;
+    			padding-top: 11px;
+			}
+	/* block banner */
+	.slogan, .wrap-welcome {
+		font-size:2em;
+	}
+	.wrap-slogan {
+			max-width: 55%;
+	}
+	/* block banner */
+
+	/* block main */
+	.prolog__header {
+	 	font-size: 1.1em;
+	 	}
+	.wrap-why-we {
+		font-size:2em;	
+	}
+	.wrap-why-we-box .kiptab li {
+		margin:10px 3%;
+	}
+	.section-products__cables h3,
+	.section-products__electric h3 {
+    font-size: 1.1em;
+}
+	.article-sub-header-index-page__h3 {font-size: 1.1em;}
+	/*block services*/
+	.multitab-widget li a span {text-transform: uppercase;}
+	a[href^="#multicolumn"] [class*="icon-"] {
+		font-size:40px;
+	}
+	/*end block services*/
+	/* block main */
+	.contact-shop, .contact-form{padding:0 5%;}
+}
+@media all and (min-width:1367px) {
+.brand-daikin {background-image:url(img/brand-daikin-max-1950.jpg);}
+.brand-me {background-image:url(img/brand-me-max-1950.jpg);}
+.brand-pioneer {background-image:url(img/brand-pioneer-max-1950.jpg);}
+.brand-toshiba {background-image:url(img/brand-toshiba-max-1950.jpg);}
+.brand-hitachi {background-image:url(img/brand-hitachi-max-1950.jpg);}
+.brand-panasonic {background-image:url(img/brand-panasonic-max-1950.jpg);}
+.brand-fujitsu {background-image:url(img/brand-fujitsu-max-1950.jpg);}
+.brand-ballu {background-image:url(img/brand-ballu-max-1950.jpg);}
+.brand-lg {background-image:url(img/brand-lg-max-1950.jpg);}
+.brand-electrolux {background-image:url(img/brand-electrolux-max-1950.jpg);}
+.brand-gree {background-image:url(img/brand-gree-max-1950.jpg);}
+}
+
+/*
+	Extra Large (min 1600px)
+---------------------------------------------------------------*/
+
+@media all and (min-width:1600px) {
+	.grid {max-width:1950px;}
+	.col-el_3 {margin-left: 16.6667%;}  /* = col-2 */
+	.col-el_5 {margin-right: 16.6667%;} /* = col-2 */
+	.header__logo {
+				width:200px; 
+				padding-top:16px;
+				padding-bottom:16px;
+			}
+	.menu li {
+		margin-left: 2%;
+		margin-right: 2%;
+			}
+	.menu li a {
+		font: normal 1em 'Roboto', Verdana;
+			}
+	/* block banner */
+	.slogan {
+		margin-left:16.66666667%;
+		width: 25%;
+	}
+	.slogan, .wrap-welcome {
+		font-size:2.2em;
+	}
+	.slogan_our-products {
+		width: 25%;
+		margin-left: 16.6666%
+	}
+	/* block banner */
+
+	/* block main */
+	.wrap-why-we {
+		font-size:2.2em;	
+	}
+	.article-header {
+		font-size:2em;	
+	}
+	/* block main */
+	.footer-links a span {font-size:1em;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
